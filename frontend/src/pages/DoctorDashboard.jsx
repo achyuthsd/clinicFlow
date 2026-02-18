@@ -19,7 +19,7 @@ const [pat, setpat] = useState([])
 const fetchInfo = async()=>{
     try {
         const user_id_f = localStorage.getItem("accid");
-         const res = await axios.get(`http://localhost:5000/api/user/${user_id_f}`)
+         const res = await axios.get(`https://clinicflow-n8xb.onrender.com/api/user/${user_id_f}`)
         console.log(res.data)
         setuserEmail(res.data.email)
         setuserName(res.data.name)
@@ -34,7 +34,7 @@ const fetchInfo = async()=>{
 
 const fetchInfo2 = async()=>{
     try {
-         const res2 = await axios.get(`http://localhost:5000/api/patient/${userDept2}`)
+         const res2 = await axios.get(`https://clinicflow-n8xb.onrender.com/api/patient/${userDept2}`)
         console.log(res2.data)
  if (!res2.data || res2.data.length === 0) {
       setrelax(true);
