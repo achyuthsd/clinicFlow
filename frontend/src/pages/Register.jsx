@@ -74,7 +74,7 @@ const Register = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:5000/api/register",
+        "https://clinicflow-n8xb.onrender.com/api/register",
         payload
       );
       
