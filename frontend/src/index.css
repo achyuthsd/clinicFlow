@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  /* Default font for entire app */
+  --font-sans: "Lexend", sans-serif;
+}
+
+/* Apply it globally */
+html,
+body {
+  font-family: var(--font-sans);
+}
