@@ -103,7 +103,7 @@ doc.text("ClinicFlow", pageWidth / 2, y, {
 const fetchInfo = async()=>{
     try {
         const user_id_f = localStorage.getItem("accid");
-         const res = await axios.get(`http://localhost:5000/api/user/${user_id_f}`)
+         const res = await axios.get(`https://clinicflow-n8xb.onrender.com/api/user/${user_id_f}`)
         console.log(res.data)
         setuserEmail(res.data.email)
         setuserName(res.data.name)
@@ -129,7 +129,7 @@ useEffect(() => {
 
 const handleSubmit = async () => {
   try {
-    await axios.post("http://localhost:5000/api/patient", formData);
+    await axios.post("https://clinicflow-n8xb.onrender.com/api/patient", formData);
     toast.success("Patient created successfully!")
   } catch (err) {
     
