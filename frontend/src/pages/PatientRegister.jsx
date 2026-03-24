@@ -126,18 +126,24 @@ useEffect(() => {
       [name]: value
     }));
   };
-
+//////////////////////////
 const handleSubmit = async () => {
   try {
-    await axios.post("https://clinicflow-n8xb.onrender.com/api/patient", formData);
+    // We create a Date object from the input string. 
+    // This treats the input as LOCAL time (IST).
+    // .toISOString() then converts it to the correct global UTC time.
+    const submissionData = {
+      ...formData,
+      datetime: new Date(formData.datetime).toISOString() 
+    };
+
+    await axios.post("https://clinicflow-n8xb.onrender.com/api/patient", submissionData);
     toast.success("Patient created successfully!")
   } catch (err) {
-    
     toast.error("Something went wrong")
-    console.error(err);
   }
 };
-
+/////////////////////////////
 useEffect(() => {
   const handleBack = () => {
     localStorage.removeItem("accid");
